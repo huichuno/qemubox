@@ -25,24 +25,29 @@ File format: *.patch
 # Makefile
 "make check"
 
-Check docker is installed
-
+- Check docker is installed
 
 "make build"
 
-Build qemu artifacts through docker build process
-
+- Build qemu artifacts through docker build process
 
 "make output"
 
-Copy artifacts from docker image to local 'build/' folder
-
+- Copy artifacts from docker image to local 'build/' folder
 
 "make clean"
 
-Delete docker image
+- Delete docker image
 
+"make all"
 
-"make"
+- Run all of above
 
-Run make check, build, output and clean
+# Artifacts - Install
+cd build
+
+tar -xzvf qemu-v4.2.1.tar.gz
+
+cd src
+
+make install
