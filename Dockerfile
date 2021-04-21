@@ -61,5 +61,5 @@ WORKDIR ${BASE}/src/build
 RUN BRANCH=$(awk -F '=' '/^BRANCH/{print $NF}' ${BASE}/conf); \
     ../configure --prefix=/usr ${BUILD_ARG} && \
     make -j `nproc` && \
-    cd .. && tar -czvf qemu-${BRANCH}.tar.gz build/ && \
+    cd ${BASE} && tar -czvf qemu-${BRANCH}.tar.gz src/ && \
     mkdir /build && cp qemu-${BRANCH}.tar.gz /build
