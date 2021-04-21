@@ -21,3 +21,12 @@ output:
 clean:
 	@echo "Delete qemu_box image" 
 	@docker rmi -f qemu_box:latest
+
+.PHONY: help
+help:
+	@echo "Targets:"
+	@echo "  all            - Build all"
+	@echo "  check          - Basic sanity check"
+	@echo "  build          - Build qemu_box docker image and qemu artifacts"
+	@echo "  output         - Copy artifacts to local 'build/' folder"
+	@echo "  clean          - Delete qemu_box docker image"
