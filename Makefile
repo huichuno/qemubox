@@ -30,3 +30,4 @@ help:
 	@echo "  build          - Build qemu_box docker image and qemu artifacts"
 	@echo "  output         - Copy artifacts to local 'build/' folder"
 	@echo "  clean          - Delete qemu_box docker image"
+	@echo ""
