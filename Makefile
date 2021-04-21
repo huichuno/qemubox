@@ -1,4 +1,3 @@
-NEY
 all: check build output clean
 
 .PHONY: check
