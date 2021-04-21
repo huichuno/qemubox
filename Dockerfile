@@ -59,7 +59,8 @@ RUN git apply ${BASE}/patches/*.patch &>/dev/null
 
 WORKDIR ${BASE}/src/build
 RUN BRANCH=$(awk -F '=' '/^BRANCH/{print $NF}' ${BASE}/conf); \
-    ../configure --prefix=/usr ${BUILD_ARG} && \
+    ../configure --prefix=${BASE}/usr ${BUILD_ARG} && \
     make -j `nproc` && \
-    cd ${BASE} && tar -czvf qemu-${BRANCH}.tar.gz src/ && \
+    make install && \
+    cd ${BASE} && tar -czvf qemu-${BRANCH}.tar.gz usr/ && \
     mkdir /build && cp qemu-${BRANCH}.tar.gz /build
