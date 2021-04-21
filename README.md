@@ -50,4 +50,4 @@ tar -xzvf qemu-v4.2.1.tar.gz
 
 cd src
 
-make install
+sudo make install
