@@ -1,10 +1,10 @@
 # qemubox
 Build qemu in docker container
 
-# prerequisite
+# Prerequisite
 Install docker
 
-# quick start
+# Quick Start
 git clone git@github.com:huichuno/qemubox.git
 make
 
@@ -19,17 +19,17 @@ BRANCH=v4.2.1
 Patch files dropped into 'patches/' folder will be applied to target as part of the build process.
 File format: *.patch
 
-# make check
+# "make check"
 Make sure docker is installed
 
-# make build
+# "make build"
 Build qemu artifacts through docker build process
 
-# make output
+# "make output"
 Copy artifacts from docker image to local 'build/' folder
 
-# make clean
+# "make clean"
 Delete docker image
 
-# make
+# "make"
 Run make check, build, output and clean
