@@ -4,19 +4,23 @@ Build qemu in docker container
 # Prerequisite
 Install docker
 
+sudo apt install -y libsdl2-2.0-0 libspice-server1
+
 # Quick Start
 git clone https://github.com/huichuno/qemubox.git
 
 make
 
 # Config
-Update REPO_URL and BRANCH parameters in 'conf' file to the desired value
+Update REPO_URL, BRANCH and PREFIX parameters in 'conf' file to the desired value
 
 Example:
 
 REPO_URL=https://git.qemu.org/git/qemu.git
 
 BRANCH=v4.2.1
+
+PREFIX=/usr
 
 # Patches (optional)
 Patch files dropped into 'patches/' folder will be applied to target as part of the build process.
@@ -31,9 +35,9 @@ File format: *.patch
 
 - Build qemu artifacts through docker build process
 
-"make output"
+"make install"
 
-- Copy artifacts from docker image to local 'build/' folder
+- Install artifacts from build/ folder 
 
 "make clean"
 
@@ -43,11 +47,8 @@ File format: *.patch
 
 - Run all of above
 
-# Artifacts - Install
-cd build
+# Debug
+make build
 
-tar -xzvf qemu-v4.2.1.tar.gz
+docker run -it qemu_box:latest bash
 
-cd src
-
-sudo make install
