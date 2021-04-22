@@ -4,7 +4,7 @@ Build qemu in docker container
 # Prerequisite
 Install docker
 
-sudo apt install -y libsdl2-2.0-0 libspice-server1
+sudo apt install -y libsdl2-2.0-0 libspice-server1 git
 
 # Quick Start
 git clone https://github.com/huichuno/qemubox.git
