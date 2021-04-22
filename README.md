@@ -29,6 +29,8 @@ make help
 
 make
 
+make install
+
 # Config
 Update REPO_URL, BRANCH and PREFIX parameters in 'conf' file to the desired value
 
@@ -73,4 +75,3 @@ File format: *.patch
 make build
 
 docker run -it qemu_box:latest bash
-
