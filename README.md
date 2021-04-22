@@ -1,13 +1,29 @@
 # qemubox
-Build qemu in docker container
+Build qemu-system-x86_64 in docker container
 
 # Prerequisite
-Install docker
+Install Docker
+--------------
+sudo apt update && sudo apt -y upgrade
 
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+sudo apt update
+
+sudo apt install docker-ce docker-ce-cli
+
+Install other dependencies
+--------------------------
 sudo apt install -y libsdl2-2.0-0 libspice-server1 git make
 
 # Quick Start
 git clone https://github.com/huichuno/qemubox.git
+
+make help
 
 make
 
@@ -29,7 +45,7 @@ File format: *.patch
 # Makefile
 "make all" (default)
 
-- Run Check, Build and Clean
+- Run check, build and clean
 
 "make check"
 
@@ -46,6 +62,10 @@ File format: *.patch
 "make clean"
 
 - Delete docker image
+
+"make help"
+
+- Print make options
 
 # Debug
 make build
