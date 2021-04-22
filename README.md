@@ -27,6 +27,10 @@ Patch files dropped into 'patches/' folder will be applied to target as part of 
 File format: *.patch
 
 # Makefile
+"make all" (default)
+
+- Run Check, Build and Clean
+
 "make check"
 
 - Check docker is installed
@@ -42,10 +46,6 @@ File format: *.patch
 "make clean"
 
 - Delete docker image
-
-"make all"
-
-- Run all of above
 
 # Debug
 make build
