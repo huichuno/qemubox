@@ -16,6 +16,8 @@ sudo apt update
 
 sudo apt install docker-ce docker-ce-cli
 
+sudo usermod -aG docker ${USER}
+
 Install other dependencies
 --------------------------
 sudo apt install -y libsdl2-2.0-0 libspice-server1 git make
