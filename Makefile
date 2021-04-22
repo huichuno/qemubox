@@ -1,4 +1,4 @@
-all: check build install clean
+all: check build clean 
 
 BRANCH := $(shell awk -F '=' '/^BRANCH/{print $$NF}' conf)
 PREFIX := $(shell awk -F '=' '/^PREFIX/{print $$NF}' conf)
@@ -35,7 +35,7 @@ clean:
 .PHONY: help
 help:
 	@echo "Targets:"
-	@echo "  all            - Build all"
+	@echo "  all            - Check, Build, Clean"
 	@echo "  check          - Basic sanity check"
 	@echo "  build          - Build qemu_box docker image and qemu artifacts"
 	@echo "  install        - Install artifacts"
