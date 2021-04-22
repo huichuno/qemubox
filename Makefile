@@ -2,6 +2,7 @@ all: check build install clean
 
 BRANCH := $(shell awk -F '=' '/^BRANCH/{print $$NF}' conf)
 PREFIX := $(shell awk -F '=' '/^PREFIX/{print $$NF}' conf)
+ARTIFACTS := build/qemu-$(BRANCH).tar.gz
 
 .PHONY: check
 check:
@@ -19,8 +20,12 @@ build:
 .PHONY: install
 install:
 	@echo "Install artifacts"
-	@if [ ! -f /build/qemu-$(BRANCH).tar.gz ]; then $(error Cannot find build artifact. Installation failed! ); fi;
-	@sudo tar -xzvf qemu-$(BRANCH).tar.gz --strip-components=1 --overwrite -C $(PREFIX)
+	@if [ ! -f $(ARTIFACTS) ]; then \
+		echo "Cannot find artifacts. Installation failed."; \
+	else \
+		sudo tar -xzvf $(ARTIFACTS) --strip-components=1 --overwrite -C $(PREFIX); \
+		echo "Installation completed."; \
+	fi
 
 .PHONY: clean
 clean:
