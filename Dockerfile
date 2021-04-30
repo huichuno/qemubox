@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 LABEL maintainer="Hui Chun Ong"
 
 ENV PACKAGES bc \
