@@ -14,7 +14,7 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] 
   
 sudo apt update
 
-sudo apt install docker-ce docker-ce-cli
+sudo apt install docker-ce
 
 sudo usermod -aG docker ${USER}
 
